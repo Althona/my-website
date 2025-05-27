@@ -1,0 +1,7 @@
+.githubLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: bold;
+}

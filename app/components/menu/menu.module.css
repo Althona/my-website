@@ -1,0 +1,27 @@
+.menu {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+}
+
+.menuList {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
