@@ -7,6 +7,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body>
+        <div id="modal"></div>
         <Heading title="Welcome to my website" description="Feel free to look around and get a better feel of who I am." />
         <Menu />
         <ContentWrapper>
