@@ -1,0 +1,10 @@
+.link {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+.link:hover, .active {
+    color: var(--color-primary);
+    text-decoration: underline;
+}

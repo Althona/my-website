@@ -8,6 +8,7 @@ import image5 from "../../public/gallery/sg-5.png";
 import image6 from "../../public/gallery/sg-6.png";
 import image7 from "../../public/gallery/sg-7.png";
 import image8 from "../../public/gallery/sg-8.png";
+import nextImage from "../../public/icons/next-image.png";
 
 import Modal from "../components/modal/modal";
 import classes from "./page.module.css";
@@ -15,17 +16,25 @@ import { useState } from "react";
 
 export default function gallery() {
 
-  const [openModal, setOpenModal] = useState<boolean>(false);
-  const [enlargedImage, setEnlargedImage] = useState<{ src: StaticImageData, desc: string } | null>(null);
+  const [enlargedImage, setEnlargedImage] = useState<{ src: StaticImageData, desc: string, index: number } | null>(null);
 
-  function openEnlargedImage(image: { src: StaticImageData, desc: string }) {
-    setOpenModal(true);
+  function openEnlargedImage(image: { src: StaticImageData, desc: string, index: number }) {
     setEnlargedImage(image);
   }
 
   function closeEnlargedImage() {
-    setOpenModal(false);
     setEnlargedImage(null);
+  }
+
+  function switchImageHandler(index: number, direction: "next" | "prev") {
+    const nextIndex = direction === "next" ?
+      (index + 1) % galleryImages.length :
+      (index - 1 + galleryImages.length) % galleryImages.length;
+    setEnlargedImage({
+      src: galleryImages[nextIndex].src,
+      desc: galleryImages[nextIndex].desc,
+      index: nextIndex
+    });
   }
 
   return (
@@ -34,7 +43,7 @@ export default function gallery() {
         It is a way for me to show my family without exposing my children to the internet, since I take their privacy very seriously.</p>
       {
         galleryImages.map((image, index) => (
-          <div key={index} className={classes.galleryItem} onClick={() => openEnlargedImage({ src: image.src, desc: image.desc })}>
+          <div key={index} className={classes.galleryItem} onClick={() => openEnlargedImage({ src: image.src, desc: image.desc, index })}>
             <Image src={image.src} alt={image.title} />
             <div className={classes.galleryItemTitle}>
               <h3>{image.title}</h3>
@@ -45,11 +54,33 @@ export default function gallery() {
       }
       {enlargedImage &&
         <Modal close={closeEnlargedImage}>
+          <button
+            className={`${classes.switchImageButton} ${classes.previousButton}`}
+            onClick={() => switchImageHandler(enlargedImage.index, 'prev')}
+            onKeyDown={(e) => e.code === 'ArrowLeft' ? switchImageHandler(enlargedImage.index, 'prev') : null}
+          >
+            <Image
+              className={classes.previousButtonIcon}
+              src={nextImage}
+              alt="Previous"
+            />
+          </button>
           <Image
             className={classes.enlargedImage}
             src={enlargedImage.src}
             alt={enlargedImage.desc}
           />
+          <button 
+          className={`${classes.switchImageButton} ${classes.nextButton}`} 
+          onClick={() => switchImageHandler(enlargedImage.index, 'next')}
+          onKeyDown={(e) => e.code === 'ArrowRight' ? switchImageHandler(enlargedImage.index, 'next') : null}
+          >
+            <Image
+              className={classes.nextButtonIcon}
+              src={nextImage}
+              alt="Next"
+            />
+          </button>
         </Modal>
       }
     </div>

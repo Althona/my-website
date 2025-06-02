@@ -1,18 +1,19 @@
-import Link from "next/link";
 import classes from "./menu.module.css";
+import MenuLink from "./menuLink";
 
 export default function Menu() {
+
   return (
     <nav className={classes.menu}>
       <ul className={classes.menuList}>
         <li className={classes.menuItem}>
-          <Link href="/">About Me</Link>
+          <MenuLink href="/projects">My Projects</MenuLink>
         </li>
         <li className={classes.menuItem}>
-          <Link href="/projects">My Projects</Link>
+          <MenuLink href="/gallery">Gallery</MenuLink>
         </li>
         <li className={classes.menuItem}>
-          <Link href="/gallery">Gallery</Link>
+          <MenuLink href="/aboutme">About Me</MenuLink>
         </li>
       </ul>
     </nav>

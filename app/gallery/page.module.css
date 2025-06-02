@@ -84,3 +84,27 @@
     font-size: 1.1em;
     color: #333;
 }
+
+.nextButton {
+    right: 20px;
+}
+
+.previousButton {
+    transform: rotate(180deg);
+    left: 20px;
+}
+
+.switchImageButton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.switchImageButton:hover {
+    opacity: 0.6;
+}
+
