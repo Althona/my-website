@@ -9,7 +9,12 @@ import { useState } from "react";
 
 export default function gallery() {
 
-  const [enlargedImage, setEnlargedImage] = useState<{ src: StaticImageData, desc: string, index: number } | null>(null);
+  const [enlargedImage, setEnlargedImage] = useState<{
+    src: StaticImageData,
+    title: string,
+    desc: string,
+    index: number
+  } | null>(null);
 
   const nextImageIndex: number = enlargedImage !== null
     ? (enlargedImage.index + 1) % galleryImages.length
@@ -18,20 +23,12 @@ export default function gallery() {
     ? (enlargedImage.index - 1 + galleryImages.length) % galleryImages.length
     : 0;
 
-  function openEnlargedImage(image: { src: StaticImageData, desc: string, index: number }) {
+  function openEnlargedImage(image: { src: StaticImageData, title: string, desc: string, index: number }) {
     setEnlargedImage(image);
   }
 
   function closeEnlargedImage() {
     setEnlargedImage(null);
-  }
-
-  function switchImageHandler(nextIndex: number) {
-    setEnlargedImage({
-      src: galleryImages[nextIndex].src,
-      desc: galleryImages[nextIndex].desc,
-      index: nextIndex
-    });
   }
 
   enlargedImageKeyHandler(enlargedImage, closeEnlargedImage, openEnlargedImage, nextImageIndex, prevImageIndex);
@@ -43,9 +40,9 @@ export default function gallery() {
         It is a way for me to show my family without exposing my children to the internet, since I take their privacy very seriously.</p>
       {
         galleryImages.map((image, index) => (
-          <div key={index} className={classes.galleryItem} onClick={() => openEnlargedImage({ src: image.src, desc: image.desc, index })}>
+          <div key={index} className={classes.galleryItem} onClick={() => openEnlargedImage({ src: image.src, title: image.title, desc: image.desc, index })}>
             <Image src={image.src} alt={image.title} />
-            <div className={classes.galleryItemTitle}>
+            <div className={classes.galleryItemContent}>
               <h3>{image.title}</h3>
               <p>{image.desc}</p>
             </div>
@@ -69,6 +66,11 @@ export default function gallery() {
             src={enlargedImage.src}
             alt={enlargedImage.desc}
           />
+          <div className={classes.enlargedImageText}>
+            <h3>{enlargedImage.title}</h3>
+            <p>{enlargedImage.desc}</p>
+          </div>
+
           <button
             className={`${classes.switchImageButton} ${classes.nextButton}`}
             onClick={() => openEnlargedImage({ ...galleryImages[nextImageIndex], index: nextImageIndex })}
