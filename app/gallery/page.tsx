@@ -1,22 +1,22 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import image1 from "../../public/gallery/sg-1.png";
-import image2 from "../../public/gallery/sg-2.png";
-import image3 from "../../public/gallery/sg-3.png";
-import image4 from "../../public/gallery/sg-4.png";
-import image5 from "../../public/gallery/sg-5.png";
-import image6 from "../../public/gallery/sg-6.png";
-import image7 from "../../public/gallery/sg-7.png";
-import image8 from "../../public/gallery/sg-8.png";
 import nextImage from "../../public/icons/next-image.png";
 
 import Modal from "../components/modal/modal";
 import classes from "./page.module.css";
+import { enlargedImageKeyHandler, galleryImages } from "./galleryTools";
 import { useState } from "react";
 
 export default function gallery() {
 
   const [enlargedImage, setEnlargedImage] = useState<{ src: StaticImageData, desc: string, index: number } | null>(null);
+
+  const nextImageIndex: number = enlargedImage !== null
+    ? (enlargedImage.index + 1) % galleryImages.length
+    : 0;
+  const prevImageIndex: number = enlargedImage !== null
+    ? (enlargedImage.index - 1 + galleryImages.length) % galleryImages.length
+    : 0;
 
   function openEnlargedImage(image: { src: StaticImageData, desc: string, index: number }) {
     setEnlargedImage(image);
@@ -26,16 +26,16 @@ export default function gallery() {
     setEnlargedImage(null);
   }
 
-  function switchImageHandler(index: number, direction: "next" | "prev") {
-    const nextIndex = direction === "next" ?
-      (index + 1) % galleryImages.length :
-      (index - 1 + galleryImages.length) % galleryImages.length;
+  function switchImageHandler(nextIndex: number) {
     setEnlargedImage({
       src: galleryImages[nextIndex].src,
       desc: galleryImages[nextIndex].desc,
       index: nextIndex
     });
   }
+
+  enlargedImageKeyHandler(enlargedImage, closeEnlargedImage, openEnlargedImage, nextImageIndex, prevImageIndex);
+
 
   return (
     <div className={classes.galleryWrapper}>
@@ -56,8 +56,7 @@ export default function gallery() {
         <Modal close={closeEnlargedImage}>
           <button
             className={`${classes.switchImageButton} ${classes.previousButton}`}
-            onClick={() => switchImageHandler(enlargedImage.index, 'prev')}
-            onKeyDown={(e) => e.code === 'ArrowLeft' ? switchImageHandler(enlargedImage.index, 'prev') : null}
+            onClick={() => openEnlargedImage({ ...galleryImages[prevImageIndex], index: prevImageIndex })}
           >
             <Image
               className={classes.previousButtonIcon}
@@ -70,10 +69,9 @@ export default function gallery() {
             src={enlargedImage.src}
             alt={enlargedImage.desc}
           />
-          <button 
-          className={`${classes.switchImageButton} ${classes.nextButton}`} 
-          onClick={() => switchImageHandler(enlargedImage.index, 'next')}
-          onKeyDown={(e) => e.code === 'ArrowRight' ? switchImageHandler(enlargedImage.index, 'next') : null}
+          <button
+            className={`${classes.switchImageButton} ${classes.nextButton}`}
+            onClick={() => openEnlargedImage({ ...galleryImages[nextImageIndex], index: nextImageIndex })}
           >
             <Image
               className={classes.nextButtonIcon}
@@ -86,14 +84,3 @@ export default function gallery() {
     </div>
   );
 }
-
-const galleryImages: { src: StaticImageData, title: string, desc: string }[] = [
-  { src: image1, title: "Me and my daughters", desc: "Sleepover at the grandparents apartment." },
-  { src: image2, title: "Youngest daughter", desc: "She just started walking and was very happy about it." },
-  { src: image3, title: "Oldest daughter", desc: "Visiting her granparents in China and wasn't impressed by the food." },
-  { src: image4, title: "Oldest daughter", desc: "Poesing and ready to celebrate christmas with the rest of the family." },
-  { src: image5, title: "Me", desc: "This is the photo I am using as a profile picture." },
-  { src: image6, title: "Both children", desc: "Oldest and youngest daughter's hugging." },
-  { src: image7, title: "My wife and youngest daughter", desc: "Happiness captured." },
-  { src: image8, title: "Me and my wife's wedding", desc: "Had our wedding in Shanghai with a view over the bond." },
-];
