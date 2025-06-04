@@ -7,7 +7,7 @@ import classes from "./page.module.css";
 import { enlargedImageKeyHandler, galleryImages } from "./galleryTools";
 import { useState } from "react";
 
-export default function gallery() {
+export default function Gallery() {
 
   const [enlargedImage, setEnlargedImage] = useState<{
     src: StaticImageData,
