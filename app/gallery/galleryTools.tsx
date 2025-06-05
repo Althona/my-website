@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 
 import { StaticImageData } from "next/image";
-import image1 from "../../public/gallery/sg-1.png";
-import image2 from "../../public/gallery/sg-2.png";
-import image3 from "../../public/gallery/sg-3.png";
-import image4 from "../../public/gallery/sg-4.png";
-import image5 from "../../public/gallery/sg-5.png";
-import image6 from "../../public/gallery/sg-6.png";
-import image7 from "../../public/gallery/sg-7.png";
-import image8 from "../../public/gallery/sg-8.png";
+import image1 from "@/public/gallery/sg-1.png";
+import image2 from "@/public/gallery/sg-2.png";
+import image3 from "@/public/gallery/sg-3.png";
+import image4 from "@/public/gallery/sg-4.png";
+import image5 from "@/public/gallery/sg-5.png";
+import image6 from "@/public/gallery/sg-6.png";
+import image7 from "@/public/gallery/sg-7.png";
+import image8 from "@/public/gallery/sg-8.png";
+
+import { GalleryImage } from "@/app/gallery/page";
 
 export const galleryImages: { src: StaticImageData, title: string, desc: string }[] = [
     { src: image1, title: "Me and my daughters", desc: "Sleepover at the grandparents apartment." },
@@ -24,7 +26,7 @@ export const galleryImages: { src: StaticImageData, title: string, desc: string 
 export function enlargedImageKeyHandler(
     enlargedImage: { index: number } | null,
     closeEnlargedImage: () => void,
-    openEnlargedImage: (image: { src: StaticImageData, title: string, desc: string, index: number }) => void,
+    openEnlargedImage: (image: GalleryImage) => void,
     nextImageIndex: number,
     prevImageIndex: number) {
 

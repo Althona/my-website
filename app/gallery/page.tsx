@@ -1,11 +1,19 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import nextImage from "../../public/icons/next-image.png";
 
-import Modal from "../components/modal/modal";
-import classes from "./page.module.css";
-import { enlargedImageKeyHandler, galleryImages } from "./galleryTools";
 import { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import nextImage from "@/public/icons/next-image.png";
+
+import Modal from "@/app/components/modal/modal";
+import classes from "@/app/gallery/page.module.css";
+import { enlargedImageKeyHandler, galleryImages } from "@/app/gallery/galleryTools";
+
+export type GalleryImage = {
+  src: StaticImageData;
+  title: string;
+  desc: string;
+  index: number;
+};
 
 export default function Gallery() {
 
@@ -23,7 +31,7 @@ export default function Gallery() {
     ? (enlargedImage.index - 1 + galleryImages.length) % galleryImages.length
     : 0;
 
-  function openEnlargedImage(image: { src: StaticImageData, title: string, desc: string, index: number }) {
+  function openEnlargedImage(image: GalleryImage) {
     setEnlargedImage(image);
   }
 
