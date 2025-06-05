@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from "./page.module.css";
+import classes from "@/app/projects/projects.module.css";
 
 export default function Projects() {
   return (

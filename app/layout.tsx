@@ -1,13 +1,12 @@
 import "./globals.css";
-import Menu from "./components/menu/menu";
-import Heading from "./components/heading/heading";
-import ContentWrapper from "./components/content-wrapper/content-wrapper";
+import Menu from "@/app/components/menu/menu";
+import Heading from "@/app/components/heading/heading";
+import ContentWrapper from "@/app/components/content-wrapper/content-wrapper";
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <body>
-        <div id="modal"></div>
         <Heading title="Welcome to my website" description="Feel free to look around and get a better feel of who I am." />
         <Menu />
         <ContentWrapper>

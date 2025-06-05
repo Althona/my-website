@@ -1,5 +1,5 @@
-import classes from "./menu.module.css";
-import MenuLink from "./menuLink";
+import classes from "@/app/components/menu/menu.module.css";
+import MenuLink from "@/app/components/menu/menuLink";
 
 export default function Menu() {
 
