@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
+import { useRouter, useSearchParams } from 'next/navigation';
 import nextImage from "@/public/icons/next-image.png";
 
 import Modal from "@/app/components/modal/modal";
@@ -16,13 +17,10 @@ export type GalleryImage = {
 };
 
 export default function Gallery() {
+  const params = useSearchParams();
+  const router = useRouter();
 
-  const [enlargedImage, setEnlargedImage] = useState<{
-    src: StaticImageData,
-    title: string,
-    desc: string,
-    index: number
-  } | null>(null);
+  const [enlargedImage, setEnlargedImage] = useState<GalleryImage | null>(null);
 
   const nextImageIndex: number = enlargedImage !== null
     ? (enlargedImage.index + 1) % galleryImages.length
@@ -33,14 +31,26 @@ export default function Gallery() {
 
   function openEnlargedImage(image: GalleryImage) {
     setEnlargedImage(image);
+    console.log(router);
+    router.push(`?galleryPic=${image.index}`, { scroll: false });
   }
 
   function closeEnlargedImage() {
     setEnlargedImage(null);
+    router.push('/gallery', { scroll: false });
   }
 
   enlargedImageKeyHandler(enlargedImage, closeEnlargedImage, openEnlargedImage, nextImageIndex, prevImageIndex);
 
+  useEffect(() => {
+    const galleryPic = params.get('galleryPic');
+    if (galleryPic !== null) {
+      const index = parseInt(galleryPic, 10);
+      if (!isNaN(index) && index >= 0 && index < galleryImages.length) {
+        openEnlargedImage({ ...galleryImages[index], index });
+      }
+    }
+  }, [params, galleryImages]);
 
   return (
     <div className={classes.galleryWrapper}>
