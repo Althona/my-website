@@ -9,18 +9,22 @@ import image5 from "@/public/gallery/sg-5.png";
 import image6 from "@/public/gallery/sg-6.png";
 import image7 from "@/public/gallery/sg-7.png";
 import image8 from "@/public/gallery/sg-8.png";
+import image9 from "@/public/gallery/sg-9.png";
+import image10 from "@/public/gallery/sg-10.png";
 
 import { GalleryImage } from "@/app/gallery/page";
 
 export const galleryImages: { src: StaticImageData, title: string, desc: string }[] = [
-    { src: image1, title: "Me and my daughters", desc: "Sleepover at the grandparents apartment." },
-    { src: image2, title: "Youngest daughter", desc: "She just started walking and was very happy about it." },
-    { src: image3, title: "Oldest daughter", desc: "Visiting her granparents in China and wasn't impressed by the food." },
-    { src: image4, title: "Oldest daughter", desc: "Poesing and ready to celebrate christmas with the rest of the family." },
-    { src: image5, title: "Me", desc: "This is the photo I am using as a profile picture." },
-    { src: image6, title: "Both children", desc: "Oldest and youngest daughter's hugging." },
+    { src: image1, title: "Sleepover at the inlaws", desc: "Me and my daughters had a sleepover at the grandparents apartment in China" },
+    { src: image2, title: "First steps", desc: "She just started walking and was very happy about it." },
+    { src: image3, title: "Chinese breakfast", desc: "Visiting her granparents in China but she wasn't impressed by the food." },
+    { src: image4, title: "Christmas", desc: "Oldest daughter is posing and ready to celebrate christmas with the rest of the family." },
+    { src: image5, title: "Studio photo", desc: "Our first family photo" },
+    { src: image6, title: "Sibling love", desc: "A moment of tenderness between the sisters." },
     { src: image7, title: "My wife and youngest daughter", desc: "Happiness captured." },
-    { src: image8, title: "Me and my wife's wedding", desc: "Had our wedding in Shanghai with a view over the bond." },
+    { src: image8, title: "Wedding", desc: "We had our wedding in Shanghai with a view over the bond." },
+    { src: image9, title: "Off to kindergarten", desc: "Excited for the first day of school and kindergarten." },
+    { src: image10, title: "Me", desc: "This is the photo I am using as a profile picture." }
 ];
 
 export function enlargedImageKeyHandler(
