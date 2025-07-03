@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter, useSearchParams } from 'next/navigation';
 import nextImage from "@/public/icons/next-image.png";
 
-import Modal from "@/src/app/components/modal/modal";
+import Modal from "@/src/app/[locale]/components/modal/modal";
 import classes from "@/src/app/[locale]/gallery/page.module.css";
 import {enlargedImageKeyHandler, galleryImages} from "@/src/app/[locale]/gallery/galleryTools";
 

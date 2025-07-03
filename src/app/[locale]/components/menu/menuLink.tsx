@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/src/i18n/navigation";
-import classes from "@/src/app/components/menu/menuLink.module.css";
+import classes from "@/src/app/[locale]/components/menu/menuLink.module.css";
 import { usePathname } from "next/navigation";
 
 export default function MenuLink({ href, children }: { href: string, children: React.ReactNode }) {

@@ -1,5 +1,5 @@
-import classes from "@/src/app/components/menu/menu.module.css";
-import MenuLink from "@/src/app/components/menu/menuLink";
+import classes from "@/src/app/[locale]/components/menu/menu.module.css";
+import MenuLink from "@/src/app/[locale]/components/menu/menuLink";
 
 import { useTranslations } from 'next-intl';
 

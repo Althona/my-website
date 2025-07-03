@@ -1,6 +1,8 @@
 {
-    "title": "Välkommen till min webbplats",
-    "description": "Titta gärna runt och få en lite bättre bild och känsla över vem jag är.",
+    "header": {
+        "title": "Välkommen till min webbplats",
+        "description": "Titta gärna runt och få en lite bättre bild och känsla över vem jag är."
+    },    
     "links": {
         "myProjects": "Mina projekt",
         "gallery": "Galleri",

@@ -1,6 +1,8 @@
 {
-    "title": "Welcome to my website",
-    "description": "Feel free to look around and get a better feel of who I am.",
+    "header": {
+        "title": "Welcome to my website",
+        "description": "Feel free to look around and get a better feel of who I am."
+    },
     "links": {
         "myProjects": "My Projects",
         "gallery": "Gallery",
