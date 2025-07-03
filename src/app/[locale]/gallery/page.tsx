@@ -5,9 +5,9 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter, useSearchParams } from 'next/navigation';
 import nextImage from "@/public/icons/next-image.png";
 
-import Modal from "@/app/components/modal/modal";
-import classes from "@/app/gallery/page.module.css";
-import { enlargedImageKeyHandler, galleryImages } from "@/app/gallery/galleryTools";
+import Modal from "@/src/app/components/modal/modal";
+import classes from "@/src/app/[locale]/gallery/page.module.css";
+import {enlargedImageKeyHandler, galleryImages} from "@/src/app/[locale]/gallery/galleryTools";
 
 export type GalleryImage = {
   src: StaticImageData;

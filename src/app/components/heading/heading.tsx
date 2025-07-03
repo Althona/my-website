@@ -1,4 +1,4 @@
-import classes from '@/app/components/heading/heading.module.css';
+import classes from '@/src/app/components/heading/heading.module.css';
 import Image from 'next/image';
 import profilePic from '@/public/profile-pic.jpg';
 import Link from 'next/link';

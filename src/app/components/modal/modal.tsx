@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import classes from '@/app/components/modal/modal.module.css';
+import classes from '@/src/app/components/modal/modal.module.css';
 
 export default function Modal({ children, close }: { children: React.ReactNode, close: () => void }) {
   const modalRoot = document.body;

@@ -1,9 +1,6 @@
 import classes from '@/app/aboutme/page.module.css';
 
 export default function AboutMe() {
-  const locale = 'sv'; // This would typically be dynamically set based on the user's locale preference
-
-  console.log(locale);
 
   return (
     <>

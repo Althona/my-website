@@ -1,4 +1,4 @@
-import classes from '@/app/components/content-wrapper/content-wrapper.module.css';
+import classes from '@/src/app/components/content-wrapper/content-wrapper.module.css';
 
 export default function ContentWrapper({children}: Readonly<{ children: React.ReactNode; }>) {
   return (
