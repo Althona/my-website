@@ -1,19 +1,22 @@
 'use client';
 
+import Image from 'next/image';
 import classes from "@/src/app/[locale]/components/menu/menu.module.css";
 import MenuLink from "@/src/app/[locale]/components/menu/menuLink";
-import { Link as LangLink } from "@/src/i18n/navigation";
-import Image from 'next/image';
+import { Link as LangLink, usePathname } from "@/src/i18n/navigation";
 import UKFlag from '@/public/icons/uk-flag.png';
 import SVFlag from '@/public/icons/swe-flag.png';
-import { usePathname } from 'next/navigation'
 
 import { useTranslations } from 'next-intl';
 
-export default function Menu({ locale }: { locale: string }) {
+type MenuProps = {
+  locale: string;
+};
+
+export default function Menu({ locale }: MenuProps) {
   const t = useTranslations('links');
   const switchLocale = locale === 'en' ? 'sv' : 'en';
-  const pathname = usePathname().replace('/' + locale, "");
+  const path = usePathname();
 
   return (
     <nav className={classes.menu}>
@@ -27,11 +30,11 @@ export default function Menu({ locale }: { locale: string }) {
         <li className={classes.menuItem}>
           <MenuLink href="/aboutme">{t("aboutMe")}</MenuLink>
         </li>
-        <div className={classes.languageSwitcher}>
-          <LangLink href={pathname} locale={switchLocale}>
+        <li className={classes.languageSwitcher}>
+          <LangLink href={path} locale={switchLocale}>
             {switchLocale === 'en' ? <Image src={UKFlag} alt="English" /> : <Image src={SVFlag} alt="Swedish" />}
           </LangLink>
-        </div>
+        </li>
       </ul>
     </nav>
   );

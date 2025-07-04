@@ -4,7 +4,12 @@ import Link from 'next/link';
 import classes from "@/src/app/[locale]/components/menu/menuLink.module.css";
 import { usePathname } from "next/navigation";
 
-export default function MenuLink({ href, children }: { href: string, children: React.ReactNode }) {
+type MenuLinkProps = { 
+    href: string; 
+    children: React.ReactNode 
+};
+
+export default function MenuLink({ href, children }: MenuLinkProps) {
     const path = usePathname();
 
     return (

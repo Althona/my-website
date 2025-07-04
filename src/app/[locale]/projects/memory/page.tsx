@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from "@/app/projects/memory/page.module.css";
+import classes from "@/src/app/[locale]/projects/memory/page.module.css";
 
 export default function MemoryPage() {
     return (

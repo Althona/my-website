@@ -7,7 +7,7 @@ import profilePic from '@/public/profile-pic.jpg';
 import classes from '@/src/app/[locale]/components/heading/heading.module.css';
 
 export default function Heading() {
-  const t = useTranslations();
+  const t: (key: string) => string = useTranslations();
 
   return (
     <header className={classes.heading}>
