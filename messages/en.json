@@ -1,7 +1,12 @@
 {
+    "meta": {
+        "title": "Latana's Personal Website",
+        "description": "This is Latana's personal website. It showcases my projects, skills, and experiences."
+    },
     "header": {
         "title": "Welcome to my website",
-        "description": "Feel free to look around and get a better feel of who I am."
+        "description": "Feel free to look around and get a better feel of who I am.",
+        "profilePictureAlt": "Latana's profile picture"
     },
     "links": {
         "myProjects": "My Projects",

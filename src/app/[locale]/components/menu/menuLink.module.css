@@ -3,6 +3,9 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     display: inline-block;
+    display: block;
+    width:140px;
+    text-align: center;
 }
 .link:hover, .active {
     color: var(--color-primary);

@@ -1,7 +1,12 @@
 {
+    "meta": {
+        "title": "Latana's Personliga Webbplats",
+        "description": "Detta är Latana's personliga webbplats. Den visar mina projekt, färdigheter och erfarenheter."
+    },
     "header": {
         "title": "Välkommen till min webbplats",
-        "description": "Titta gärna runt och få en lite bättre bild och känsla över vem jag är."
+        "description": "Titta gärna runt och få en lite bättre bild och känsla över vem jag är.",
+        "profilePictureAlt": "Latana's profilbild"
     },    
     "links": {
         "myProjects": "Mina projekt",

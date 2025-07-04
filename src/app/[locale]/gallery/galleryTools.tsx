@@ -12,7 +12,7 @@ import image8 from "@/public/gallery/sg-8.png";
 import image9 from "@/public/gallery/sg-9.png";
 import image10 from "@/public/gallery/sg-10.png";
 
-import { GalleryImage } from "@/app/gallery/page";
+import { GalleryImage } from "@/src/app/[locale]/gallery/page";
 
 export const galleryImages: { src: StaticImageData, title: string, desc: string }[] = [
     { src: image1, title: "Sleepover at the inlaws", desc: "Me and my daughters had a sleepover at the grandparents apartment in China" },

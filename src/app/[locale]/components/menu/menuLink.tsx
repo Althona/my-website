@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/src/i18n/navigation";
+import Link from 'next/link';
 import classes from "@/src/app/[locale]/components/menu/menuLink.module.css";
 import { usePathname } from "next/navigation";
 

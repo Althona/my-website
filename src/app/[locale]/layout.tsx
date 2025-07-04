@@ -13,8 +13,8 @@ export default async function RootLayout({ children, params }: Readonly<{ childr
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <Heading/>
-          <Menu />
+          <Heading />
+          <Menu locale={locale} />
           <ContentWrapper>
             {children}
           </ContentWrapper>
