@@ -12,5 +12,55 @@
         "myProjects": "My Projects",
         "gallery": "Gallery",
         "aboutMe": "About Me"
+    },
+    "myProjects": {
+        "title": "My Projects",
+        "description": "Here are some of my latest projects that I have worked on."
+    },
+    "gallery": {
+        "title": "Gallery",
+        "description": "All the images are real pictures reimagined with the help of ChatGPT. It is a way for me to show my family without exposing my children to the internet since I take their privacy very seriously.",
+        "images": [
+            {
+                "title": "Sleepover at the inlaws",
+                "desc": "Me and my daughters had a sleepover at the grandparents apartment in China"
+            },
+            {
+                "title": "First steps",
+                "desc": "She just started walking and was very happy about it."
+            },
+            {
+                "title": "Chinese breakfast",
+                "desc": "Visiting her granparents in China but she wasn't impressed by the food."
+            },
+            {
+                "title": "Christmas",
+                "desc": "Oldest daughter is posing and ready to celebrate christmas with the rest of the family."
+            },
+            {
+                "title": "Studio photo",
+                "desc": "Our first family photo"
+            },
+            {
+                "title": "Sibling love",
+                "desc": "A moment of tenderness between the sisters."
+            },
+            {
+                "title": "My wife and youngest daughter",
+                "desc": "Happiness captured."
+            },
+            {
+                "title": "Wedding",
+                "desc": "We had our wedding in Shanghai with a view over the bond."
+            },
+            {
+                "title": "Off to kindergarten",
+                "desc": "Excited for the first day of school and kindergarten."
+            },
+            {
+                "title": "Me",
+                "desc": "This is the photo I am using as a profile picture."
+            }
+        ]
     }
 }

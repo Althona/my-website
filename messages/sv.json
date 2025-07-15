@@ -12,5 +12,55 @@
         "myProjects": "Mina projekt",
         "gallery": "Galleri",
         "aboutMe": "Om mig"
+    },
+    "myProjects": {
+        "title": "Mina projekt",
+        "description": "Här är några av mina senaste projekt som jag har arbetat med."
+    },
+    "gallery": {
+        "title": "Galleri",
+        "description": "Alla bilder är verkliga bilder som har omarbetats med hjälp av ChatGPT. Det är ett sätt för mig att visa min familj utan att exponera mina barn på internet eftersom jag tar deras integritet på största allvar.",
+        "images": [
+            {
+                "title": "Övernattning hos svärföräldrarna",
+                "desc": "Jag och mina döttrar hade en övernattning hos svärföräldrarna i Kina"
+            },
+            {
+                "title": "Första stegen",
+                "desc": "Hon har precis börjat gå och var mycket glad över det."
+            },
+            {
+                "title": "Kinesisk frukost",
+                "desc": "Besöker sina morföräldrar i Kina men hon var inte imponerad av maten."
+            },
+            {
+                "title": "Jul",
+                "desc": "Äldsta dottern poserar och är redo att fira jul med resten av familjen."
+            },
+            {
+                "title": "Studiofoto",
+                "desc": "Vår första familjefoto"
+            },
+            {
+                "title": "Syskonkärlek",
+                "desc": "Ett ögonblick av ömhet mellan systrarna."
+            },
+            {
+                "title": "Min fru och yngsta dotter",
+                "desc": "Lycka fångad."
+            },
+            {
+                "title": "Bröllop",
+                "desc": "Vi hade vårt bröllop i Shanghai med en populär utsikt."
+            },
+            {
+                "title": "Påväg till förskolan",
+                "desc": "Spänd inför första dagen i skolan och förskolan."
+            },
+            {
+                "title": "Jag",
+                "desc": "Detta är bilden jag använder som profilbild."
+            }
+        ]
     }
 }
