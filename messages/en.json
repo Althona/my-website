@@ -62,5 +62,47 @@
                 "desc": "This is the photo I am using as a profile picture."
             }
         ]
+    },
+    "aboutMe": {
+        "title": "About Me",
+        "resume": {
+            "summery": {
+                "title": "Short Summary",
+                "text": "I graduated in the summer of 2015 from Linnaeus University where I learned object-oriented programming. I have 5 years of experience in the delivery team at Vergic AB where I worked in Javascript and Angular and 3 years of experience in the product team at Puzzel AB where I worked in React Redux."
+            },
+            "skills": {
+                "title": "computer literacy",
+                "subtitle": "Programming Languages and Tools",
+                "languages": {
+                   "javascript": "JavaScript",
+                   "react": "React",
+                   "angular": "Angular",
+                   "typescript": "TypeScript",
+                   "html": "HTML",
+                   "css": "CSS"
+                }
+            },
+            "theory": {
+                "title": "Theoretically",
+                "wcag": "Wcag 2.2",
+                "ux": "Basic level in UX & web design",
+                "scrum": "Scrum",
+                "agile": "Agile development",
+                "testing": "Blackbox testing and whitebox testing"
+            },
+            "tools": {
+                "title": "Tools",
+                "vscode": "Visual Studio Code",
+                "postman": "Postman",
+                "webstorm": "WebStorm",
+                "github": "GitHub",
+                "jira": "Jira"
+            },
+            "other": {
+                "title": "Other Skills",
+                "drivingLicense": "Holds a driver's license B",
+                "languages": "I am fluent in Swedish and English."
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@
         "title": "Välkommen till min webbplats",
         "description": "Titta gärna runt och få en lite bättre bild och känsla över vem jag är.",
         "profilePictureAlt": "Latana's profilbild"
-    },    
+    },
     "links": {
         "myProjects": "Mina projekt",
         "gallery": "Galleri",
@@ -62,5 +62,46 @@
                 "desc": "Detta är bilden jag använder som profilbild."
             }
         ]
+    },
+    "aboutMe": {
+        "title": "Om mig",
+        "resume": {
+            "summery": {
+                "title": "Kort Sammanfattning",
+                "text": "Jag tog examen sommaren 2015 från Linneuniversitetet där jag fick lära mig programmera objektorienterat. Jag har 5 års erfarenhet i leverans teamet hos Vergic AB där jag arbetade i Javascript och Angular och 3 års erfarenhet i produktteamet hos Puzzel AB där jag arbetade i React Redux."
+            },
+            "skills": {
+                "title": "Datakunskap",
+                "subtitle": "Programspråk och ramverk",
+                "languages": {
+                    "nextjs": "Next.js",
+                    "typescript": "TypeScript",
+                    "react": "React-Redux",
+                    "javascript": "JavaScript",
+                    "html": "HTML och CSS"
+                }
+            },
+            "theory": {
+                "title": "Teoretiskt",
+                "wcag": "Wcag 2.2",
+                "ux": "Grund nivå i UX & webb-design",
+                "scrum": "Scrum",
+                "agile": "Agil utveckling",
+                "testing": "Blackbox testning och whitebox testning"
+            },
+            "tools": {
+                "title": "Verktyg",
+                "vscode": "Visual Studio Code",
+                "postman": "Postman",
+                "webstorm": "WebStorm",
+                "github": "GitHub",
+                "jira": "Jira"
+            },
+            "other": {
+                "title": "Övriga färdigheter",
+                "drivingLicense": "Innehar Körkort B",
+                "languages": "Talar flytande svenska och engelska."
+            }
+        }
     }
 }
