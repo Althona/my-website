@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import classes from "@/src/app/[locale]/components/menu/menuLink.module.css";
-import { usePathname } from "next/navigation";
+import { usePathname } from '@/src/i18n/navigation';
 
 type MenuLinkProps = { 
     href: string; 

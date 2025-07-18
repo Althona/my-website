@@ -1,0 +1,74 @@
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.aboutMeWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.summaryTitle,
+.resumeTitle,
+.theoryTitle,
+.toolsTitle,
+.otherTitle,
+.experienceTitle,
+.educationTitle,
+.personalTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.summaryText,
+.educationText,
+.personalText,
+.experienceText {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.resumeSubtitle,
+.experienceSubtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.skillsList,
+.theoryList,
+.toolsList,
+.otherList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.skillItem,
+.theoryItem,
+.toolItem,
+.otherItem {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  color: #222;
+}
+
+.skillItem:last-child,
+.theoryItem:last-child,
+.toolItem:last-child,
+.otherItem:last-child {
+  border-bottom: none;
+}
