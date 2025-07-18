@@ -14,7 +14,6 @@ export default function AboutMe() {
 
   return (
     <>
-      <h1 className={classes.title}>{title("title")}</h1>
       <div className={classes.aboutMeWrapper}>
         <h4 className={classes.summaryTitle}>{summary("title")}</h4>
         <p className={classes.summaryText}>{summary("text")}</p>
