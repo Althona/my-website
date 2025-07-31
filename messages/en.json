@@ -13,6 +13,14 @@
         "gallery": "Gallery",
         "aboutMe": "About Me"
     },
+    "frontPage": {
+        "title": "Hello there! I see you found my website.",
+        "text": "This is the place I present who I am, my family and some of my work. This webbpage is writen in next-js along with typescript and if you are intrested in checking out my reposetory in git you can find it ",
+        "link": {
+            "text": "here",
+            "url": "https://github.com/Althona/"
+        }
+    },
     "myProjects": {
         "title": "My Projects",
         "description": "Here are some of my latest projects that I have worked on."
@@ -71,7 +79,7 @@
                 "text": "I graduated in the summer of 2015 from Linnaeus University where I learned object-oriented programming. I have 5 years of experience in the delivery team at Vergic AB where I worked in Javascript and Angular and 3 years of experience in the product team at Puzzel AB where I worked in React Redux."
             },
             "skills": {
-                "title": "computer literacy",
+                "title": "Computer literacy",
                 "subtitle": "Programming Languages and Tools",
                 "languages": {
                     "nextjs": "Next.js",

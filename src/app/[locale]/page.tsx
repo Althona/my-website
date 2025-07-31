@@ -1,11 +1,16 @@
 
+import { useTranslations } from "next-intl";
+import styles from "./page.module.css";
+
 export default function Home() {
+  const t = useTranslations("frontPage");
+
   return (
     <>
-      <h1>Hello there! I see you found my website...</h1>
-      <p><span>This is the place I present who I am, my family and some of my work. This webbpage is writen in next-js with typescript and if you are intrested in checking out my code reposetory in git you can find it </span>
-        <a href='https://github.com/Althona/' target='_blank'>here.</a>
-        <span> Enjoy your stay at my humble blog.</span>
+      <h1 className={styles.title}>{t("title")}</h1>
+      <p className={styles.subtitle}>
+        <span>{t("text")}</span>
+        <a className={styles.link} href={t("link.url")} target='_blank'>{t("link.text")}</a>
       </p>
     </>
   );

@@ -13,6 +13,14 @@
         "gallery": "Galleri",
         "aboutMe": "Om mig"
     },
+    "frontPage": {
+        "title": "Hejsan! ",
+        "text": "Detta är platsen för mig att presenterar vem jag är, lite om min familj och en del av mitt arbete. Webbplatsen är skriven i next-js tillsammans med typescript. Om ni är intresserad av att ta en närmre titt på git så kan du hitta länken ",
+        "link": {
+            "text": "här",
+            "url": "https://github.com/Althona/"
+        }
+    },
     "myProjects": {
         "title": "Mina projekt",
         "description": "Här är några av mina senaste projekt som jag har arbetat med."
