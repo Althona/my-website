@@ -17,49 +17,76 @@ export default function MemoryPage() {
     const [firstCardFlipped, setFirstCardFlipped] = useState<Card | null>(null);
     const [secondCardFlipped, setSecondCardFlipped] = useState<Card | null>(null);
     const [matched, setMatched] = useState<number[]>([]);
-    const [triesLeft, setTriesLeft] = useState<number>(10);
+    const [triesLeft, setTriesLeft] = useState<number>(0); // 10
+    const bothCardsFlipped = !!firstCardFlipped && !!secondCardFlipped;
+    const [endGameMessage, setEndGameMessage] = useState<string>('');
 
     function startNewGame() {
         setDifficultyMode(true);
+        resetGame();
     }
 
-    function resetGame() { }
+    function resetFlippedCards() {
+        setFirstCardFlipped(null);
+        setSecondCardFlipped(null);
+    }
 
-    function endGame() { }
+    function resetGame() {
+        setDeck([]);
+        resetFlippedCards();
+        setMatched([]);
+        setTriesLeft(4);
+        setEndGameMessage('');
+        setDifficultyMode(true);
+    }
+
+    function hasPlayerWon(matchedCards: number[]) {
+        if (matchedCards.length === deck.length) {
+            setEndGameMessage("Congratulations! You've matched all the cards!");
+        }
+    }
+
+    function hasPlayerLost(tries: number) {
+        console.log(tries);
+        if (tries <= 0) {
+            setEndGameMessage("Game Over! You've run out of tries.");
+        }
+    }
 
     function flipCard(card: number, id: number) {
-        console.log(`Flipped card: ${card} with id: ${id}`);
-        if (firstCardFlipped) {
-            setSecondCardFlipped({ card, id });
-            checkMatch(firstCardFlipped, { card, id });
-        } else {
-            setFirstCardFlipped({ card, id });
+        //     console.log(`Flipped card: ${card} with id: ${id}`);
+        if (!bothCardsFlipped) {
+            if (firstCardFlipped) {
+                setSecondCardFlipped({ card, id });
+                checkMatch(firstCardFlipped, { card, id });
+            } else {
+                setFirstCardFlipped({ card, id });
+            }
         }
-
     }
 
     function checkMatch(firstCardFlipped: Card, secondCardFlipped: Card) {
-        console.log(`Checking match: ${firstCardFlipped.card} with ${secondCardFlipped.card}`);
+        //    console.log(`Checking match: ${firstCardFlipped.card} with ${secondCardFlipped.card}`);
         if (firstCardFlipped.card === secondCardFlipped.card) {
-            setMatched(prev => [...prev, firstCardFlipped.id, secondCardFlipped.id]);
-            setFirstCardFlipped(null);
-            setSecondCardFlipped(null);
+            const matchedCards = [...matched, firstCardFlipped.id, secondCardFlipped.id];
+            setMatched(matchedCards);
+            hasPlayerWon(matchedCards);
+            resetFlippedCards();
         }
         else {
             setTimeout(() => {
-                setFirstCardFlipped(null);
-                setSecondCardFlipped(null);
-                setTriesLeft(triesLeft - 1);
+                const tries = (triesLeft - 1);
+                setTriesLeft(tries);
+                hasPlayerLost(tries);
+                resetFlippedCards();
             }, 1000);
         }
-        console.log(matched);
-
     }
 
     function generateDeck(nrOfCards: number) {
         setDifficultyMode(false);
         const nrCardsInRow: number = Math.sqrt(nrOfCards * 2);
-        console.log(nrCardsInRow);
+        //     console.log(nrCardsInRow);
         setDeck(Array.from({ length: nrOfCards }, (_, i) => i % (nrOfCards / 2)).sort(() => Math.random() - 0.5));
     }
 
@@ -88,17 +115,22 @@ export default function MemoryPage() {
                             matched.includes(index) || firstCardFlipped?.id === index || secondCardFlipped?.id === index
                                 ?
                                 <div key={index} className={classes.memoryCard}>
-                                    <span className={classes.card}>{card}</span>
+                                    <span className={classes.card}>?</span>
                                 </div>
                                 :
                                 <div key={index} className={classes.memoryCard}>
-                                    <span id={index.toString()} className={classes.card} onClick={() => flipCard(card, index)}>?</span>
+                                    <span id={index.toString()} className={classes.card} onClick={() => flipCard(card, index)}>{card}</span>
                                 </div>
                         ))}
                     </div>
                 </>
             }
-
+            {endGameMessage &&
+                <div>
+                    <p>{endGameMessage}</p>
+                    <button onClick={() => resetGame()}>Reset Game</button>
+                </div>
+            }
         </>
     );
 }
