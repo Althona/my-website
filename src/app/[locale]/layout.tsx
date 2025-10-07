@@ -1,5 +1,4 @@
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { routing } from '@/src/i18n/routing';
+import { NextIntlClientProvider } from 'next-intl';
 
 import "@/src/app/globals.css";
 import Menu from "@/src/app/[locale]/components/menu/menu";

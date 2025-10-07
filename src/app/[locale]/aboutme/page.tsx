@@ -2,7 +2,6 @@ import classes from '@/src/app/[locale]/aboutme/page.module.css';
 import { useTranslations } from 'next-intl';
 
 export default function AboutMe() {
-  const title = useTranslations("aboutMe");
   const summary = useTranslations("aboutMe.resume.summary");
   const skills = useTranslations("aboutMe.resume.skills");
   const theory = useTranslations("aboutMe.resume.theory");
