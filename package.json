@@ -10,10 +10,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "next": "15.3.2",
+    "next": "^15.5.4",
     "next-intl": "^4.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
