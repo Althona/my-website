@@ -7,7 +7,7 @@ import nextImage from "@/public/icons/next-image.png";
 
 import Modal from "@/src/app/[locale]/components/modal/modal";
 import classes from "@/src/app/[locale]/gallery/page.module.css";
-import { enlargedImageKeyHandler, galleryImages } from "@/src/app/[locale]/gallery/galleryTools";
+import { EnlargedImageKeyHandler, galleryImages } from "@/src/app/[locale]/gallery/galleryTools";
 import { useTranslations } from "next-intl";
 
 export type GalleryImage = {
@@ -29,7 +29,7 @@ export default function Gallery() {
     ? (enlargedImage.index - 1 + galleryImages.length) % galleryImages.length
     : 0;
 
-  function openEnlargedImage(image: GalleryImage) {
+  const openEnlargedImage = (image: GalleryImage) => {
     setEnlargedImage(image);
     router.push(`?galleryPic=${image.index}`, { scroll: false });
   }
@@ -39,7 +39,7 @@ export default function Gallery() {
     router.push('/gallery', { scroll: false });
   }
 
-  enlargedImageKeyHandler(
+  EnlargedImageKeyHandler(
     openEnlargedImage,
     closeEnlargedImage,
     enlargedImage,
@@ -52,10 +52,10 @@ export default function Gallery() {
     if (galleryPic !== null) {
       const index = parseInt(galleryPic, 10);
       if (!isNaN(index) && index >= 0 && index < galleryImages.length) {
-        openEnlargedImage({ image: galleryImages[index], index });
+        setEnlargedImage({ image: galleryImages[index], index });
       }
     }
-  }, [params, galleryImages]);
+  }, [params]);
 
   return (
     <div className={classes.galleryWrapper}>
@@ -86,6 +86,7 @@ export default function Gallery() {
           <Image
             className={classes.enlargedImage}
             src={enlargedImage.image}
+            priority={true}
             alt={t(`images.${enlargedImage.index}.desc`)}
           />
           <div className={classes.enlargedImageText}>

@@ -26,7 +26,7 @@ export const galleryImages: StaticImageData [] = [
     image9
 ];
 
-export function enlargedImageKeyHandler(
+export function EnlargedImageKeyHandler(
     openEnlargedImage: (image: GalleryImage) => void,
     closeEnlargedImage: () => void,
     enlargedImage: { index: number } | null,
@@ -49,5 +49,5 @@ export function enlargedImageKeyHandler(
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [enlargedImage, openEnlargedImage, closeEnlargedImage]);
+    }, [enlargedImage, openEnlargedImage, closeEnlargedImage, nextImageIndex, prevImageIndex]);
 };
