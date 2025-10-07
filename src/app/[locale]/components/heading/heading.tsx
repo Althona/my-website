@@ -16,7 +16,7 @@ export default function Heading() {
       <Link href="/">
         <Image className={classes.profilePicture}
           src={profilePic}
-          priority={false}
+          priority={true}
           alt={t('header.profilePictureAlt')} />
       </Link>
       <h1 className={classes.title}>{t('header.title')}</h1>
