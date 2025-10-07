@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import classes from "@/src/app/[locale]/projects/memory/page.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type Card = {
     card: number;
@@ -85,7 +85,7 @@ export default function MemoryPage() {
 
     function generateDeck(nrOfCards: number) {
         setDifficultyMode(false);
-        const nrCardsInRow: number = Math.sqrt(nrOfCards * 2);
+        //    const nrCardsInRow: number = Math.sqrt(nrOfCards * 2);
         //     console.log(nrCardsInRow);
         setDeck(Array.from({ length: nrOfCards }, (_, i) => i % (nrOfCards / 2)).sort(() => Math.random() - 0.5));
     }

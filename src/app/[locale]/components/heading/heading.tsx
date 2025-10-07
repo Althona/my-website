@@ -14,7 +14,10 @@ export default function Heading() {
       <title>{t('meta.title')}</title>
       <meta name="description" content={t('meta.description')} />
       <Link href="/">
-        <Image className={classes.profilePicture} src={profilePic} alt={t('header.profilePictureAlt')} />
+        <Image className={classes.profilePicture}
+          src={profilePic}
+          priority={false}
+          alt={t('header.profilePictureAlt')} />
       </Link>
       <h1 className={classes.title}>{t('header.title')}</h1>
       <p>{t('header.description')}</p>
